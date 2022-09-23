@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/bornchow/ROS_WS/ugv_ws/devel/include/**",
+        "/home/bornchow/ROS_WS/park_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/bornchow/ROS_WS/ugv_ws/src/navi_alhorithm/include/**",
+        "/home/bornchow/ROS_WS/park_ws/src/park_navi/park_navi/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <node pkg="data_make" type="pc_data_make_offline" name="pc_data_make" output="screen">
+    <param name="local_map_length" value= "2.0" />
+    <param name="local_map_width" value="2.0" />
+    <param name="local_map_height" value="4.0" />
+    <param name="data_save_dir" value="/home/bornchow/ROS_WS/ugv_ws/src/pred_navi/data_make/data/" />
+    <param name="save_data" value="true" />
+    <param name="map_res" value="0.1" />
+    <param name="sample_dis" value="0.5" />
+    <param name="imu_time_window" value="1.5" />
+
+    <param name="pc_topic" value="/cloud_pcd" />
+    <param name="imu_topic" value="/imu" />
+  </node>
+
+</launch>
+
