@@ -1,0 +1,36 @@
+<launch>
+    <env name="GAZEBO_MODEL_PATH" value="$(find navi_pred)/gazebo/Bmy_terrain"/>
+    <arg name="robot_namespace" default="/"/>
+    <arg name="world_name" default="$(find navi_pred)/worlds/outside_tree.world"/>
+    <!-- <arg name="x" default="2.8"/> 
+    <arg name="y" default="-5.6"/>  
+    <arg name="z" default="3"/>  
+    <arg name="yaw" default="0"/> -->
+
+    <arg name="x" default="-35.18"/>
+    <arg name="y" default="10.55"/>
+    <arg name="z" default="3.0"/>
+    <arg name="yaw" default="0.6"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(arg world_name)"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <include file="$(find navi_pred)/launch/spawn_scout_v2.launch">
+        <arg name="x" value="$(arg x)"/>
+        <arg name="y" value="$(arg y)"/>
+        <arg name="z" value="$(arg z)"/>
+        <arg name="yaw" value="$(arg yaw)"/>
+    </include>
+
+    <node pkg="tf" type="static_transform_publisher" name="map_to_wolrd" args="$(arg x) $(arg y) $(arg z) $(arg yaw) 0.0 0.0 /world /map 50"/>
+
+    <!-- <include file="$(find scout_base)/launch/scout_base_sim.launch" /> -->
+        
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find scout_description)/rviz/navigation.rviz" /> -->
+</launch>

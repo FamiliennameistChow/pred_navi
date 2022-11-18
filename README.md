@@ -51,7 +51,7 @@ sudo apt-get install ros-$ROS_DISTRO-octomap-rviz-plugins
 sudo apt install ros-$ROS_DISTRO-navigation
 ```
 
-# Write the gazebo environment to the system environment
+## Write the gazebo environment to the system environment
 
 ```
 cd gazebo_model
@@ -80,3 +80,5 @@ We use GAZEBO to collect and make dataset. GO TO [data_make](./data_make)
 
 
 # real-time navigation
+
+The simulation test in GAZEBO. GO TO [navi_pred](./navi_pred)

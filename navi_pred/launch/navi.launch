@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <node pkg="navi_pred" type="navi" name="navi" output="screen">
+        <!-- point model and trj_lab dir -->
+        <param name="net_model_dir" value="/home/bornchow/ROS_WS/slam_ws/src/navi_pred/model/model_3210_0.9759_0.9509.pt" />
+        <param name="config_dir" value="/home/bornchow/ROS_WS/slam_ws/src/navi_pred/config" />
+
+        <!-- the global point map topic -->
+        <param name="pc_topic" value="/cloud_pcd" />
+
+        <!-- slide window param -->
+        <param name="box_stride" value="0.5" />
+        <param name="box_kernel" value="2.0" />
+        <param name="sample_point_num" value="500" />
+
+        <!-- the size of local map -->
+        <param name="local_map_length" value="10.0" />
+        <param name="local_map_width" value="10.0" />
+        <param name="local_map_height" value="6.0" />
+
+        <!-- size of the robot  !!! it should be the same as what data_make package have set -->
+        <param name="robot_size_length" value="2.0" />
+        <param name="robot_size_width" value="2.0" />
+        <param name="robot_szie_height" value="4.0" />
+
+        <param name="guide_line_step" value="0.1" />
+
+        <!-- to target or avoid 越小越趋向目标 -->
+        <param name="cost_factor" value="0.5" />
+    </node>
+
+    <node pkg="rviz" type="rviz" name="$(anon rviz)" respawn="false" output="screen" args="-d $(find navi_pred)/rviz/navi.rviz"/>
+
+</launch>

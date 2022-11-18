@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="slamType" default="aloam" /> 
+  <!-- now support two type of laser slam  1.lio-sam  2.aloam -->
+
+  <!-- 加载全局参数-->
+  <group if="$(eval arg('slamType') == 'lio-sam')">
+    <rosparam file="$(find data_make)/config/lio-sam.yaml" command="load"/>
+  </group>
+
+  <group if="$(eval arg('slamType') == 'aloam')">
+    <rosparam file="$(find data_make)/config/aloam.yaml" command="load"/>
+  </group>
+
+  <node pkg="data_make" type="pc_data_make" name="pc_data_make" output="screen">
+    <param name="local_map_length" value="2.0" />
+    <param name="local_map_width" value="2.0" />
+    <param name="local_map_height" value="4.0" />
+    <param name="data_save_dir" value="/home/bornchow/ROS_WS/slam_ws/src/data_make/data/" />
+    <param name="save_data" value="true" />
+    <param name="map_res" value="0.1" />
+    <param name="sample_dis" value="0.5" />
+  </node>
+
+  <!-- RViz -->
+  <node pkg="rviz" type="rviz" name="$(anon rviz)" respawn="false" output="screen" args="-d $(find data_make)/rviz/data_make.rviz"/>
+
+</launch>
+
