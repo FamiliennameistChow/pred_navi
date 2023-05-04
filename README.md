@@ -12,6 +12,7 @@ this project is well test in:
 -- scout_gazebo_sim  # GAZEBO simulator set
 -- data_make         # code for dataset make
 -- gazebo_model      # gazebo model 
+-- navi_pred         # model training and real-time navigation 
 ```
 
 ----
@@ -76,7 +77,7 @@ We use GAZEBO to collect and make dataset. GO TO [data_make](./data_make)
 
 # Network training and test
 
-
+train the prediction model. GO TO [pred_net](./navi_pred/train_model.md)
 
 
 # real-time navigation

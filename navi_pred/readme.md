@@ -12,6 +12,17 @@
 
 ## 安装与使用：
 
+### 已训练好的模型
+
+[baidu-drive](https://pan.baidu.com/s/1dG7Bcq0JU6LaOLRInp_VSA) 
+提取码: nf7w
+
+
+[google-drive](https://drive.google.com/drive/folders/1ARMpC_ryOBZekh-6TzU0a4sRyP4QcmEF?usp=share_link)
+
+
+下载到`model`文件夹下
+
 ### 预测地形
 地形预测目前是在具有全局点云地图的基础上进行的，（该全局地图是事先采用LIO-SAM激光slam构建的）
 
